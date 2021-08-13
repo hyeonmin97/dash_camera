@@ -12,7 +12,7 @@ width=int(vid_capture.get(3))
 height=int(vid_capture.get(4))
 
 #코덱 적용(DIVX, XVID, MJPG, X264, WMV1, WMV2)
-vid_cod = cv2.VideoWriter_fourcc(*'XVID')
+vid_cod = cv2.VideoWriter_fourcc(*'x264')
 
 
 while True:
@@ -30,7 +30,7 @@ while True:
         print(ymd)
 
     #비디오 저장을 위한 객체 생성
-    output = cv2.VideoWriter("videos/{}/{}.avi".format(ymd, HMS), vid_cod, 30, (width,height))
+    output = cv2.VideoWriter("videos/{}/{}.mp4".format(ymd, HMS), vid_cod, 30, (width,height))
     start_time = time.time()
 
     while True:
@@ -47,7 +47,7 @@ while True:
 
         video_time = time.time()
         print(video_time-start_time)
-        if video_time-start_time > 60:
+        if video_time-start_time > 5:
             break
 
     #vid_capture.release()
