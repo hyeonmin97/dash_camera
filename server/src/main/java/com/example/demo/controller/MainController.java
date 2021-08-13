@@ -56,7 +56,7 @@ public class MainController {
 
 
     //스트리밍
-    @GetMapping(value = "/video1/{directory}/{name}")
+    @GetMapping(value = "/video/{directory}/{name}")
     public ResponseEntity<ResourceRegion> getVideo(@RequestHeader HttpHeaders headers, @PathVariable String directory, @PathVariable String name) throws IOException {
 
         UrlResource video = new UrlResource("file:C:\\Users\\hyeonmin\\Desktop\\dash_camera\\webcam\\videos\\"  + directory+ "\\" + name + ".mp4");
